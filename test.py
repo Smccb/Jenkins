@@ -32,8 +32,12 @@ def checkServiceForWord(url, keyword):
         return result
 # Test 1
 name = 'Test 1'
-url = 'https://jsonplaceholder.typicode.com/todos/1'
-result = checkServiceForWord(url, 'userId')
+url = 'http://localhost:5000/getProducts'
+result = checkServiceForWord(url, 'name1')
 saveResult(name, url, result)
+
+
+
+
 # finish up
 f.close()
