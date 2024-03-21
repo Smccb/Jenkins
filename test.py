@@ -37,6 +37,21 @@ result = checkServiceForWord(url, 'name1')
 saveResult(name, url, result)
 
 
+# Test 2
+name = 'Test 1'
+url = 'http://localhost:5000/getTitles'
+result = checkServiceForWord(url, 'name1')
+saveResult(name, url, result)
+
+#Test 3
+
+
+
+#Test 4
+name = 'Test 1'
+url = 'http://localhost:5000/'
+result = checkServiceForWord(url, '/getProducts')
+saveResult(name, url, result)
 
 
 # finish up
