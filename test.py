@@ -11,12 +11,13 @@ import unittest
 #     unittest.main(testRunner=HtmlTestRunner.HTMLTestRunner(output='test_output'))
 
 import requests
-f = open('test.log', 'w+')
+f = open('test_saved.log', 'w+')
 def saveResult(name, url, result):
     f.write('Test name:' + str(name) + '\n')
     f.write('Test URL:' + str(url) + '\n')
     f.write('Test result:' + str(result) + '\n')
     f.write('---------------------------------------------\n ')
+    
 def checkServiceForWord(url, keyword):
     result = False
     try:
@@ -38,7 +39,7 @@ saveResult(name, url, result)
 
 
 # Test 2
-name = 'Test 1'
+name = 'Test 2'
 url = 'http://localhost:5000/getTitles'
 result = checkServiceForWord(url, 'name1')
 saveResult(name, url, result)
@@ -48,7 +49,7 @@ saveResult(name, url, result)
 
 
 #Test 4
-name = 'Test 1'
+name = 'Test 4'
 url = 'http://localhost:5000/'
 result = checkServiceForWord(url, '/getProducts')
 saveResult(name, url, result)
