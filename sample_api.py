@@ -5,6 +5,7 @@ from pymongo import MongoClient
 from bson.json_util import dumps, loads
 import graphene
 from bson.objectid import ObjectId
+import requests
 
 
 client = MongoClient("mongodb://root:example@localhost:27017/")
@@ -53,8 +54,9 @@ api.add_resource(GetTitles, '/getTitles')
 
 class InsertProducts(Resource):
     def get(self):
-        title = "nameHere"
-        cost = 3
+        data = requests.get_json()
+        title = data.get("title")
+        cost = data.get("cost")
 
         newRecord= {"ProductTitle": title, "ProductCost": cost}
         res = collection.insert_one(newRecord)
