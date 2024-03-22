@@ -53,13 +53,17 @@ api.add_resource(GetTitles, '/getTitles')
 
 class InsertProducts(Resource):
     def get(self):
-        return {'id': '1234556'}
-api.add_resource(InsertProducts, '/insertProducts')
+        title = "nameHere"
+        cost = 3
+
+        newRecord= {"ProductTitle": title, "ProductCost": cost}
+        res = collection.insert_one(newRecord)
+api.add_resource(InsertProducts, '/insertProduct')
 
 class Root(Resource):
     def get(self):
         return {'/getProducts': 'getting all products from db',
-                '/insertProducts': 'inserting products',
+                '/insertProduct': 'inserting products',
                 '/getTitles': 'titles of products'}
                 
 api.add_resource(Root, '/')
