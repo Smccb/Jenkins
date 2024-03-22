@@ -6,6 +6,7 @@ from bson.json_util import dumps, loads
 import graphene
 from bson.objectid import ObjectId
 import requests
+from flask import request
 
 
 client = MongoClient("mongodb://root:example@localhost:27017/")
@@ -53,13 +54,19 @@ api.add_resource(GetTitles, '/getTitles')
 
 
 class InsertProducts(Resource):
-    def get(self):
-        data = requests.get_json()
+    def post(self):
+        
+        # Retrieve data from the request
+        data = request.get_json()
         title = data.get("title")
         cost = data.get("cost")
 
-        newRecord= {"ProductTitle": title, "ProductCost": cost}
-        res = collection.insert_one(newRecord)
+        # Insert the product into the database
+        new_record = {"ProductTitle": title, "ProductCost": cost}
+        collection.insert_one(new_record)
+
+        # Return a response
+        return {"message": "Product inserted successfully"}, 201
 api.add_resource(InsertProducts, '/insertProduct')
 
 class Root(Resource):
