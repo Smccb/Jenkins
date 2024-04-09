@@ -44,9 +44,6 @@ url = 'http://localhost:5000/getTitles'
 result = checkServiceForWord(url, 'name1')
 saveResult(name, url, result)
 
-#Test 3
-
-
 
 #Test 4
 name = 'Test 4'

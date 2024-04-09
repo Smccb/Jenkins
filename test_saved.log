@@ -1,0 +1,13 @@
+Test name:Test 1
+Test URL:http://localhost:5000/getProducts
+Test result:True
+---------------------------------------------
+ Test name:Test 2
+Test URL:http://localhost:5000/getTitles
+Test result:True
+---------------------------------------------
+ Test name:Test 4
+Test URL:http://localhost:5000/
+Test result:True
+---------------------------------------------
+ 
